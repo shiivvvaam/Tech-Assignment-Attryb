@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>AskHR Hub - Maruti Suzuki</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="navbar">
+    <img src="images/Maruti-Suzuki-Logo.png" class="logo" />
+    <h1>AskHR Hub</h1>
+    <a href="/logout" class="logout-btn">Logout</a>
+  </div>
+
+  <div class="chat-box">
+    <img src="images/bot.png" class="bot-img">
+    <div class="messages" id="messages"></div>
+    <form id="chat-form">
+      <input type="text" id="user-input" placeholder="Ask HR anything..." required />
+      <button type="submit">Send</button>
+    </form>
+  </div>
+
+  <script>
+    document.getElementById('chat-form').addEventListener('submit', async function(e) {
+      e.preventDefault();
+      const userInput = document.getElementById('user-input').value;
+      const msgBox = document.getElementById('messages');
+
+      msgBox.innerHTML += `<div class="user-msg">${userInput}</div>`;
+      document.getElementById('user-input').value = '';
+
+      const res = await fetch('/chat', {
+        method: 'POST',
+        headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+        body: `message=${encodeURIComponent(userInput)}`
+      });
+
+      const data = await res.json();
+      msgBox.innerHTML += `<div class="bot-msg">${data.reply}</div>`;
+    });
+  </script>
+</body>
+</html>
