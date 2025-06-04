@@ -1,0 +1,101 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(to right, #002b6c, #0047b3);
+  color: white;
+}
+
+.login-body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: #001f4d;
+}
+
+.login-container {
+  text-align: center;
+  background: white;
+  color: #002b6c;
+  padding: 30px;
+  border-radius: 10px;
+}
+
+.login-container input {
+  padding: 10px;
+  margin: 10px 0;
+  width: 200px;
+}
+
+.login-container button {
+  padding: 10px 20px;
+  background: #002b6c;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.navbar {
+  background-color: #001f4d;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  height: 40px;
+}
+
+.logout-btn {
+  color: white;
+  text-decoration: none;
+  padding: 10px;
+  background: #ff3333;
+  border-radius: 5px;
+}
+
+.chat-box {
+  padding: 20px;
+  max-width: 600px;
+  margin: 40px auto;
+  background: #f0f4ff;
+  color: #000;
+  border-radius: 10px;
+}
+
+.bot-img {
+  height: 80px;
+  display: block;
+  margin: 0 auto 20px;
+}
+
+#user-input {
+  width: 70%;
+  padding: 10px;
+  margin-top: 10px;
+}
+
+button[type="submit"] {
+  padding: 10px;
+  background: #001f4d;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.messages {
+  margin-bottom: 10px;
+}
+
+.user-msg {
+  text-align: right;
+  margin: 10px;
+  font-weight: bold;
+}
+
+.bot-msg {
+  text-align: left;
+  margin: 10px;
+  color: #003366;
+}
